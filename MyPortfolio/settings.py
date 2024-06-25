@@ -132,12 +132,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-JAZZMIN_SETTINGS = {
-    "site_title": "My Admin",
-    "site_header": "My Admin",
-    "site_brand": "Hello Aditya's",
-    # "site_logo": "/static/assets/img/Aditya.png",
-    "welcome_sign": "Welcome to My Admin Panel",
-}
+DEFAULT_AUTO_FIELD = "django.db.models
