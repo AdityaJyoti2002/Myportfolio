@@ -1,9 +1,9 @@
-Django==4.0.4
+instant-coffee
+coffee
+package-tea-one
 gunicorn==20.1.0
 dj-database-url==0.5.0
 whitenoise==5.3.0
 psycopg2-binary==2.9.3
-django-jazzmin>=3.0.0
-instant-coffee
-coffee
-package-tea-one
+django-jazzmin==3.0.0
+
