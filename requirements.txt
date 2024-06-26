@@ -1,6 +1,4 @@
-instant-coffee
 coffee
-package-tea-one
 gunicorn==20.1.0
 dj-database-url==0.5.0
 whitenoise==5.3.0
