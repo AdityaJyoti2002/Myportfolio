@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Aditya Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/assets/img/Aditya.png" rel="icon"> 
+  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/static/assets/css/main.css" rel="stylesheet">
+</head>
+{% comment %} {% block content %} {% endcomment %}
+<body class="index-page">
+  {% comment %} {% csrf_token %} {% endcomment %}
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Aditya.</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home<br></a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li class="dropdown"><a href="#"><span>Admin</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{{ "admin "}}">Log in</a></li>
+              
+              
+              <li><a href="{{"admin"}}">Sign Up</a></li>
+              
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      {% for client in clients %}
+      <img src="/static/assets/img/6.png" alt="" data-aos="fade-in" style="width: 1920px height: 1055px" >
+
+      <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+        <h2>I am Aditya Jyoti</h2>
+        <p><span class="typed" data-typed-items="Designer, Web Developer, Freelancer, Youtuber"></span></p><br>
+        <a href="{{ client.pdf.url }}" download ><button  class="btn btn-light">Download Resume</button></a>
+        
+      </div>
+      {%endfor%}
+      
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-md-6">
+
+            <div class="row justify-content-between gy-4">
+              <div class="col-lg-5">
+                <img src="{{ about.image.url}}" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-7 about-info">
+                <p><strong>Name: </strong> <span>Aditya Jyoti</span></p>
+                <p><strong>Profile: </strong> <span>Front-end</span></p>
+                <p><strong>Email: </strong> <span>aditya2002a@gmail.com</span></p>
+                <p><strong>Phone: </strong> <span>8766206185</span></p>
+              </div>
+
+            </div>
+
+            <div class="skills-content skills-animation">
+
+              <h5>Skills</h5>
+
+              <div class="progress">
+                <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>CSS</span> <i class="val">90%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>Django</span> <i class="val">75%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>React</span> <i class="val">60%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+              <div class="progress">
+                <span class="skill"><span>JavaScript</span> <i class="val">55%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <div class="about-me">
+              <h4>About me</h4>
+              <p>
+                {{ about.short_description}}
+                {% comment %} Presently I am a student of CSE (Fourth Semester) In IIT, BHU, Varanasi. I have good knowledge of languages C++, Python, Javascripts, C, Django, etc and good command on coding, design, video editing. I can do all the job which is given to me. I am always looking for a better prospect in my life, and definitely give my better results to the company. I am always interested to learn new thing and always trying to do the job in better way and invent new way to perform in better way. {% endcomment %}
+              </p>
+              {% comment %} <p>
+                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis
+                porttitor volutpat. Vestibulum
+                ac diam sit amet quam vehicula elementum sed sit amet dui. porttitor at sem.
+              </p>
+              <p>
+                Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
+                Nulla porttitor accumsan
+                tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+              </p> {% endcomment %}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Skill</h3>
+
+            <div class="resume-item pb-0">
+              {% comment %} <h4>Web Technologies</h4> {% endcomment %}
+              {% comment %} <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p> {% endcomment %}
+              <ul>
+                <li><strong>Web Technologies:</strong> HTML, CSS</li>
+                <li>Programming Languages C++, C, Python, Javascripts, java</li>
+                <li>Tools Github, VS code</li>
+                <li>Python Libraries/Frameworks Django, Pandas, NumPy, tkinter, Scikit-learn
+                </li>
+                <li>Database Management MySql</li>
+                <li>Interests Frontend development, backend development,dsa, design, photo editing
+                </li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+            
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Indian Institutes Of Technology(BHU)</h4>
+              <h5>2022-Current</h5>
+              {% comment %} <p><em>class 10th</em></p> {% endcomment %}
+              {% comment %} <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p> {% endcomment %}
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>NATIONAL INSTITUTE of OPEN SCHOOLING, Delhi</h4>
+              <h5>2022</h5>
+              <p><em>class-12</em></p>
+              {% comment %} <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p> {% endcomment %}
+            </div><!-- Edn Resume Item -->
+            <div class="resume-item">
+              <h4>Central Board of Secondary Education, Delhi</h4>
+              <h5>2019</h5>
+              <p><em>class-10</em></p>
+              {% comment %} <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p> {% endcomment %}
+            </div><!-- Edn Resume Item -->
+
+          </div>
+          {% comment %} {% for client in clients %}
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">{{ Client.heading}}</h3>
+            <div class="resume-item">
+              <h4>{{ Client.name}}</h4>
+              <h5>{{Client.date}}</h5>
+              <p><em>{{Client.description}} </em></p>
+              {% endfor %}
+              {% comment %} <ul>
+                <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
+                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
+                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
+                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+              </ul> 
+            </div><!-- Edn Resume Item --> {% endcomment %}
+            {% comment %} {% for client in clients %}
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                  <h3 class="resume-title">{{ client.heading }}</h3>
+                  <div class="resume-item">
+                    <h4>{{ client.name }}</h4>
+                    <h5>{{ client.date }}</h5>
+                    {% comment %} <p><em>{{ client.description }}</em></p> {% endcomment %}
+                  
+           
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="resume-title">POSITION OF RESPONSIBILITY</h3>
+                <div class="resume-item">
+                  {% comment %} <h4>{{ client.name }}</h4>
+                  <h5>{{ client.date }}</h5> {% endcomment %}
+                  {% comment %} <p><em>{{ client.description }}</em></p> {% endcomment %}
+                  <ul>
+                    <li>Documentary Coordinator, FMC(Film and Media Council), IIT BHU</li>
+                    <li>Part of Creative Team in Jagriti, SSC(Social Service council), IIT BHU</li>
+                    {% comment %} <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
+                    <li>Recommended and consulted with clients on the most appropriate graphic design</li>
+                    <li>Created 4+ design presentations and proposals a month for clients and account managers</li> {% endcomment %}
+                  </ul>
+                </div><!-- End Resume Item -->
+              </div><!-- End Column -->
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="resume-title">Honours and Achievements</h3>
+                <div class="resume-item">
+                  <h4>Competitive Programming</h4>
+                  {% comment %} <h5>{{ client.date }}</h5> {% endcomment %}
+                  {% comment %} <p><em>{{ client.description }}</em></p> {% endcomment %}
+                  <ul>
+                    <li>Codeforces with Max Rating of 704</li>
+                    <li>Problem Sloved more than 81 in codeforces.</li>
+                    
+                    
+                  </ul>
+                  <h4>Academic Achievements</h4>
+                  <li>Secured All India Rank 51(CRL-PWD) or 26781(CRL) in JEE Advanced 2022.</li>
+                  <li>Secured All India Rank 597(CRL-PWD) or 267554(CRL) in JEE Mains 202</li>
+                </div><!-- End Resume Item -->
+              </div><!-- End Column -->
+
+
+{% comment %} 
+              <div class="resume-item">
+                <h4>Graphic design specialist</h4>
+                <h5>2017 - 2018</h5>
+                <p><em>Stepping Stone Advertising, New York, NY</em></p>
+                <ul>
+                  <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
+                  <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
+                  <li>Recommended and consulted with clients on the most appropriate graphic design</li>
+                  <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
+                </ul>
+              </div><!-- Edn Resume Item --> {% endcomment %}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+          {% for service in services %}
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="bi bi-activity"></i>
+              </div>
+              <a href="{{ service.link}}" class="stretched-link">
+                <h3>{{ service.name}}</h3>
+              </a>
+              <p>
+                {{ service.description}}</p>
+            </div>
+          </div><!-- End Service Item -->
+        {% endfor %}
+          
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+      <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
+
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="0" class="purecounter">232</span>
+              <p>Clients</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="0" class="purecounter">521</span>
+              <p>Projects</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="0" class="purecounter">1453</span>
+              <p>Hours Of Support</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="0" class="purecounter">32</span>
+              <p>Awards</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Project</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">Front-end</li>
+            <li data-filter=".filter-product">django</li>
+            <li data-filter=".filter-branding">React</li>
+            {% comment %} <li data-filter=".filter-books">Books</li> {% endcomment %}
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+          {% for work in works %}
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{work.category}}">
+              <img src="{{work.image.url}}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>{{ work.title}}</h4>
+                <p>{{ work.description}}</p>
+                <a href="{{work.image.url}}" title="{{ work.title}}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="{{work.link}}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+          {% endfor %}
+
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+ 
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        {% comment %} <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> {% endcomment %}
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-5">
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>New Delhi</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Phone</h3>
+                  <p>8766206185</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email<br></h3>
+                  <p>aditya2002a@gmail.com</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+        </div>
+
+        <form action="{% url 'contact' %}" method="post" class="form" data-aos="fade-up"   data-aos-delay="300">{% csrf_token %}
+          {% comment %} {% csrf_token %} {% endcomment %}
+          <div class="row gy-4 form-box">
+            {% comment %} {% csrf_token %} {% endcomment %}
+
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+            </div>
+
+            <div class="col-md-6 ">
+              
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+            </div>
+
+            <div class="col-md-12">
+              
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+            </div>
+
+            <div class="col-md-12">
+              
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+              {% comment %} <button type="submit">Send Message</button> {% endcomment %}
+            </div>
+
+            <div class="col-md-12 text-center">
+              {% comment %} <div class="loading">Loading</div> {% endcomment %}
+              {% comment %} <div class="error-message"></div> {% endcomment %}
+              {% if success %}
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+              {% endif %}
+              <button class="btn btn-primary" type="submit">Send Message</button>
+            </div>
+            {% comment %} <button type="submit">Send Message</button> {% endcomment %}
+
+          </div>
+        </form><!-- End Contact Form -->
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Aditya.</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://www.youtube.com/channel/UCrEUWlRsSuUBN4ek7yPedzg"><i class="bi bi-youtube"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100019618440946"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/aditya2002a/"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/aditya-jyoti-185112259/"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">Aditya Jyoti</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/static/assets/vendor/aos/aos.js"></script>
+  <script src="/static/assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="/static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/static/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="/static/assets/js/main.js"></script>
+  {% comment %} {% endblock content %} {% endcomment %}
+</body>
+
+</html>
